@@ -7,6 +7,7 @@ public class DiscoverPhone {
     public static String path = "d:\\1.jpeg";
     public static Tool_AdbCommand comm = new Tool_AdbCommand();
 
+    //主函数，提供逻辑顺序
     public static void main(String[] args) {
 
         //ADB初始化
@@ -22,6 +23,9 @@ public class DiscoverPhone {
 
     }
 
+    /**
+     * 使用主线程进行实时设备检测，5s一次
+     */
     private static class DevicesWatcher implements Runnable {
         private IDevice[] mOldDevices;
 
@@ -42,7 +46,10 @@ public class DiscoverPhone {
         }
     }
 
+    //初始化设备实时检测类
     private static DevicesWatcher dw = new DevicesWatcher();
+
+    //设备实时检测函数的调用入口函数
     public static void runWatcher(){
         dw.run();
     }
