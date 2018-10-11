@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2ebfc028-bd1e-42a7-a7d1-4e7df0e0fa2b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VControl/com/ConnPhone/DiscoverPhone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VControl/com/ConnPhone/DiscoverPhone.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VControl/com/ToolsAdbCommand/Tool_AdbCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VControl/com/ToolsAdbCommand/Tool_AdbCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ConnPhone/DiscoverPhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ConnPhone/DiscoverPhone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ToolsAdbCommand/Tool_AdbCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ToolsAdbCommand/Tool_AdbCommand.java" afterDir="false" />
@@ -48,51 +49,62 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="3" />
+          <entry key="css" value="1" />
+          <entry key="java" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="3" />
+          <entry key="CSS" value="1" />
+          <entry key="JAVA" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="679" />
+          <entry key="java" value="1259" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="679" />
+          <entry key="JAVA" value="1259" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ConnPhone/DiscoverPhone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="61" lean-forward="true" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+            <state relative-caret-position="303">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
+                <element signature="e#1016#1017#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ToolsAdbCommand/Tool_AdbCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="78" column="80" lean-forward="true" selection-start-line="78" selection-start-column="80" selection-end-line="78" selection-end-column="80" />
+            <state relative-caret-position="226">
+              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1055#1056#0" expanded="true" />
+                <element signature="e#1101#1102#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,8 +133,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/ttt.java" />
         <option value="$PROJECT_DIR$/src/com/ConnPhone/ttt.java" />
-        <option value="$PROJECT_DIR$/src/com/ConnPhone/DiscoverPhone.java" />
+        <option value="$PROJECT_DIR$/src/com/ConnPhone/HotPlugin.java" />
         <option value="$PROJECT_DIR$/src/com/ToolsAdbCommand/Tool_AdbCommand.java" />
+        <option value="$PROJECT_DIR$/src/com/ConnPhone/DiscoverPhone.java" />
       </list>
     </option>
   </component>
@@ -140,7 +153,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="912" />
+    <option name="x" value="-47" />
+    <option name="y" value="11" />
     <option name="width" value="1011" />
     <option name="height" value="1047" />
   </component>
@@ -150,6 +164,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,19 +197,36 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="ToolsAdbCommand" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="VControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VControl" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VControl" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VControl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VControl" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539216097219" />
-    <property name="last_opened_file_path" value="D:/Git/bin/git.exe" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539292579098" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Adb-Remote-Screen" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -340,18 +372,19 @@
       <option name="presentableId" value="Default" />
       <updated>1539188277952</updated>
       <workItem from="1539188281532" duration="2441000" />
-      <workItem from="1539213381306" duration="2780000" />
+      <workItem from="1539213381306" duration="6409000" />
+      <workItem from="1539277558382" duration="9327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10821000" />
+    <option name="totallyTimeSpent" value="23777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18763326" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -406,13 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ConnPhone/DiscoverPhone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="61" lean-forward="true" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/ddmlib.jar!/com/android/ddmlib/AndroidDebugBridge.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -420,12 +446,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ToolsAdbCommand/Tool_AdbCommand.java">
+    <entry file="file://$PROJECT_DIR$/web/css/bootstrap/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="78" column="80" lean-forward="true" selection-start-line="78" selection-start-column="80" selection-end-line="78" selection-end-column="80" />
+        <state relative-caret-position="-5073" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ConnPhone/HotPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#1405#1406#0" expanded="true" />
+            <element signature="e#1434#1435#0" expanded="true" />
+            <element signature="e#2157#2158#0" expanded="true" />
+            <element signature="e#2251#2252#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ToolsAdbCommand/Tool_AdbCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1055#1056#0" expanded="true" />
+            <element signature="e#1101#1102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ConnPhone/DiscoverPhone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
           </folding>
         </state>
       </provider>

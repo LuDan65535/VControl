@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 import com.android.ddmlib.AdbCommandRejectedException;
 import com.android.ddmlib.AndroidDebugBridge;
@@ -31,11 +32,18 @@ public class Tool_AdbCommand {
             }
         }
     }
+
+    /*
+    启动adb
+     */
+    public static void initADB(){
+        AndroidDebugBridge.init(false);
+    }
+
     /*
     发现并连接设备
      */
     public static IDevice[] ConnDevice() {
-        AndroidDebugBridge.init(false);
 
         //寻找adb命令的默认路径，如果没有则直接使用adb命令
         String adbLocation = System.getProperty("com.android.screenshot.bindir");
@@ -61,7 +69,6 @@ public class Tool_AdbCommand {
             System.out.println("Device " + cnt + " SerialNumber: : " + device.getSerialNumber());
             cnt++;
         }
-
         return devices;
     }
 
@@ -113,7 +120,6 @@ public class Tool_AdbCommand {
             }
         }
     }
-
 }
 
 
