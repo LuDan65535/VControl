@@ -6,9 +6,15 @@
 //         }
 //     })
 // })
+var webSocket = null;
+function sendMes() {
+    webSocket.send('111111');
+}
+
+
 function initSocket(myWebsocket) {
 
-    var webSocket = null;
+
 
     window.onbeforeunload = function () {
         //离开页面时的其他操作
@@ -19,7 +25,7 @@ function initSocket(myWebsocket) {
         return false;
     }
 
-    var target = 'ws://' + window.location.host + "/activemq-client/websocket/"+myWebsocket;
+    var target = 'ws://' + window.location.host + "/websocket/"+myWebsocket;
 
     if ('WebSocket' in window) {
         webSocket = new WebSocket(target);
@@ -35,7 +41,7 @@ function initSocket(myWebsocket) {
     webSocket.onmessage = function (msg) {
         alert(msg.data);
         // 关闭连接
-        webSocket.onclose();
+        //webSocket.onclose();
         console.log(msg);
     };
 

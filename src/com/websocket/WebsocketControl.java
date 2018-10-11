@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
  */
 @ServerEndpoint("/websocket/{myWebsocket}")
 public class WebsocketControl {
-    private static final Logger logger = LoggerFactory.getLogger(WebsocketControl.class);
+    //private static final Logger logger = LoggerFactory.getLogger(WebsocketControl.class);
 
     public static Map<String, Session> clients = new ConcurrentHashMap<String, Session>();
 
@@ -29,7 +29,7 @@ public class WebsocketControl {
      */
     @OnOpen
     public void onOpen(@PathParam("myWebsocket") String myWebsocket, Session session){
-        logger.info("Websocket Start Connecting:" + myWebsocket);
+        //logger.info("Websocket Start Connecting:" + myWebsocket);
         System.out.println("进入："+myWebsocket);
         clients.put(myWebsocket, session);
     }
@@ -52,8 +52,8 @@ public class WebsocketControl {
      */
     @OnError
     public void onError(@PathParam("myWebsocket") String myWebsocket, Throwable throwable) {
-        logger.info("Websocket Connection Exception:" + myWebsocket);
-        logger.info(throwable.getMessage(), throwable);
+        //logger.info("Websocket Connection Exception:" + myWebsocket);
+        //logger.info(throwable.getMessage(), throwable);
         clients.remove(myWebsocket);
     }
 
@@ -63,7 +63,7 @@ public class WebsocketControl {
      */
     @OnClose
     public void onClose(@PathParam("myWebsocket") String myWebsocket) {
-        logger.info("Websocket Close Connection:" + myWebsocket);
+        //logger.info("Websocket Close Connection:" + myWebsocket);
         clients.remove(myWebsocket);
     }
 
