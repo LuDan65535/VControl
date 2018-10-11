@@ -19,16 +19,17 @@ public class Tool_AdbCommand {
      */
     private static void waitDeviceList(AndroidDebugBridge bridge) {
         int count = 0;
-            while (bridge.hasInitialDeviceList() == false) {
-                try {
-                    Thread.sleep(100); // 如果没有获得设备列表，则等待
-                    count++;
-                } catch (InterruptedException e) {}
-                if (count > 300) {    // 设定时间超过300×100 ms的时候为连接超时
-                    System.err.print("Time out");
-                    break;
-                }
+        while (bridge.hasInitialDeviceList() == false) {
+            try {
+                Thread.sleep(100); // 如果没有获得设备列表，则等待
+                System.err.println("wait for devices");
+                count++;
+            } catch (InterruptedException e) {}
+            if (count > 300) {    // 设定时间超过300×100 ms的时候为连接超时
+                   System.err.print("Time out");
+                   break;
             }
+        }
     }
     /*
     发现并连接设备
@@ -50,8 +51,16 @@ public class Tool_AdbCommand {
 
         IDevice devices[] = bridge.getDevices();
 
-        System.out.println("是否存在设备:" + bridge.hasInitialDeviceList());
-        System.out.println(devices + " are connected");
+        System.out.println("device number = " + devices.length);
+
+        int cnt = 1;
+        for (IDevice device : devices)
+        {
+            System.out.println("Device " + cnt + " Name: "  +  device.getName());
+            System.out.println("Device " + cnt + " isOnline: " + device.isOnline() );
+            System.out.println("Device " + cnt + " SerialNumber: : " + device.getSerialNumber());
+            cnt++;
+        }
 
         return devices;
     }

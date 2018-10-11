@@ -6,6 +6,6 @@ public class DiscoverPhone {
 
     public static void main(String[] args){
         Tool_AdbCommand comm = new Tool_AdbCommand();
-        comm.sendScreenShot(comm.ConnDevice(), "e:\\1.jpeg");
+        comm.sendScreenShot(comm.ConnDevice(), "d:\\1.jpeg");
     }
 }
