@@ -9,8 +9,14 @@ public class DiscoverPhone {
 
     public static void main(String[] args) {
 
+        //ADB初始化
         comm.initADB();
+
+        //首次检测设备并截图
         comm.sendScreenShot(comm.ConnDevice(), path);
+
+        //使用线程检测设备并截图
+        //需要修改为各自独立线程，截图频率远大于检测
         runWatcher();
 
 
