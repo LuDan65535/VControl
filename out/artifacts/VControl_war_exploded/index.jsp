@@ -17,13 +17,13 @@
     <link rel="stylesheet" type="text/css" href="css/login/component.css" />
     <title></title>
   </head>
-  <body>
+  <body onload="initSocket('myWebsocket')">
   <div class="container demo-1">
     <div class="content">
       <div id="large-header" class="large-header">
         <canvas id="demo-canvas"></canvas>
         <div class="logo_box">
-          <h3>欢迎你</h3>
+          <h3>Welcome</h3>
           <form action="#" name="f" method="post">
             <div class="input_outer">
               <span class="u_user"></span>
@@ -43,6 +43,7 @@
   <script src="js/login/EasePack.min.js"></script>
   <script src="js/login/rAF.js"></script>
   <script src="js/login/demo-1.js"></script>
+  <script src="js/login.js"></script>
   </body>
 </html>
 
