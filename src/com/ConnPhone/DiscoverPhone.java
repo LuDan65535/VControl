@@ -1,6 +1,6 @@
 package com.ConnPhone;
 
-import com.ToolsAdbCommand.Tool_AdbCommand;
+import com.Tools.Tool_AdbCommand;
 import com.android.ddmlib.IDevice;
 
 public class DiscoverPhone {

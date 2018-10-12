@@ -6,16 +6,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 /**
- * 功能说明：websocket处理类, 使用J2EE7的标准
- * @author Administrator
- * @create 2016-8-11 下午4:08:35
- * @version 1.0
+ * 功能说明：websocket处理类
  */
+
 @ServerEndpoint("/websocket/{myWebsocket}")
 public class WebsocketControl {
     //private static final Logger logger = LoggerFactory.getLogger(WebsocketControl.class);
