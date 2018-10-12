@@ -13,31 +13,32 @@ public class Tool_MsgProcessor {
     public static String messageParser(JSONObject msg){
 
         Message result = new Message();
+        Content content = new Content();
 
         if(msg.get("type") == "login"){
             result.setType("login");
             //密码正确
             if( msg.get("password").toString().equals(getPassword(msg.get("username").toString()))){
-                result.setResult("pass");
-                result.setCode("0");
+                content.setResult("pass");
+                content.setCode("0");
             }else if(getPassword(msg.get("username").toString()).equals("")){
                 //查询步到用户
-                result.setResult("fail");
-                result.setCode("2");
+                content.setResult("fail");
+                content.setCode("2");
             }else{
                 //密码错误
-                result.setResult("fail");
-                result.setCode("1");
+                content.setResult("fail");
+                content.setCode("1");
             }
         }
+        result.setContent(content);
         return JSONObject.toJSONString(result);
     }
 }
 
 class Message {
     private String type;
-    private String result;
-    private String code;
+    private Content content;
 
     public String getType() {
         return type;
@@ -46,6 +47,20 @@ class Message {
     public void setType(String type) {
         this.type = type;
     }
+
+    public Content getContent() {
+        return content;
+    }
+
+    public void setContent(Content content) {
+        this.content = content;
+    }
+}
+
+class Content {
+
+    private String result;
+    private String code;
 
     public String getResult() {
         return result;
@@ -62,9 +77,4 @@ class Message {
     public void setCode(String code) {
         this.code = code;
     }
-
-    @Override
-    public String toString() {
-        return "{ type : login, content : { result : " + result + ", code : " + code + "}}";
-    }
-};
+}
