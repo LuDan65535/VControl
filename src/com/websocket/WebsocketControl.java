@@ -6,8 +6,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static com.Tools.Tool_MsgProcessor.messageParser;
 
 /**
  * 功能说明：websocket处理类
@@ -39,7 +46,9 @@ public class WebsocketControl {
      */
     @OnMessage
     public String onMessage(@PathParam("myWebsocket") String myWebsocket, String message) {
-        return "Got your message ("+ message +").Thanks !";
+        JSONObject msg = JSON.parseObject(message);
+        String result = messageParser(msg);
+        return result;
     }
 
     /**

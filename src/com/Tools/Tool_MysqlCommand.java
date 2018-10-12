@@ -1,5 +1,6 @@
 package com.Tools;
 
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +8,7 @@ import java.util.List;
 
 public class Tool_MysqlCommand {
 
-    public static String driver = "com.mysql.jdbc.Driver";
+    public static String driver = "com.mysql.cj.jdbc.Driver";
 
     private static String host;
 
@@ -30,8 +31,8 @@ public class Tool_MysqlCommand {
     /**
      *执行查询，返回结果
      **/
-    public static synchronized List<HashMap<String, String>> query(String sql) {
-        return Tool_MysqlCommand.result(sql);
+    public static synchronized String query(String sql, String obj) {
+        return Tool_MysqlCommand.result(sql,obj);
     }
 
     /**
@@ -68,9 +69,7 @@ public class Tool_MysqlCommand {
     private static void connectMySQL() {
         try {
             Class.forName(driver).newInstance();
-            conn = (Connection) DriverManager.getConnection("jdbc:mysql://"
-                            + host + "?useUnicode=true&characterEncoding=UTF8", user,
-                    pwd);
+            conn = DriverManager.getConnection(host, user, pwd);
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -95,33 +94,19 @@ public class Tool_MysqlCommand {
         }
     }
 
-    //查询结果集
-    private static ResultSet resultSet(String sql) {
+    //查询结果
+    private static String result(String sql, String obj) {
         ResultSet rs = null;
+        String result = "";
         if (stmt == null) {
             Tool_MysqlCommand.statement();
         }
         try {
             rs = stmt.executeQuery(sql);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rs;
-    }
-
-    //查询结果
-    private static List<HashMap<String, String>> result(String sql) {
-        ResultSet rs = Tool_MysqlCommand.resultSet(sql);
-        List<HashMap<String, String>> result = new ArrayList<HashMap<String, String>>();
-        try {
-            ResultSetMetaData md = rs.getMetaData();
-            int cc = md.getColumnCount();
-            while (rs.next()) {
-                HashMap<String, String> columnMap = new HashMap<String, String>();
-                for (int i = 1; i <= cc; i++) {
-                    columnMap.put(md.getColumnName(i), rs.getString(i));
-                }
-                result.add(columnMap);
+            if (rs.next()){
+                result = rs.getString(obj);
+            }else{
+                result = "";
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -131,8 +116,8 @@ public class Tool_MysqlCommand {
 
     /**
      * 查询操作
-     *       Tool_MysqlCommand.connectInfo("192.168.1.1/test", "test", "test");
-     *       List<HashMap<String, String>> rs = Tool_MysqlCommand.query("SELECT * from test");
+     *       Tool_MysqlCommand.connectInfo("localhost:3306/vcontrol", "root", "123123");-----------------{"Mysql服务器地址：端口/数据库名"}
+     *       List<HashMap<String, String>> rs = Tool_MysqlCommand.query("select password from useraccounts WHERE username="admin"");----{表名}
      *       System.out.println(rs.get(0).get("test"));
      *       Tool_MysqlCommand.close();
      */
