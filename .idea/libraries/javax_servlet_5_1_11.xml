@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javax.servlet-5.1.11">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/javax.servlet-5.1.11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

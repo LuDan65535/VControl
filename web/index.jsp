@@ -33,7 +33,7 @@
               <span class="us_uer"></span>
               <input name="logpass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
             </div>
-            <div class="mb2"><a class="act-but submit" onclick="sendMes();" style="color: #FFFFFF">登录</a></div>
+            <div class="mb2"><a class="act-but submit" onclick="login();" style="color: #FFFFFF">登录</a></div>
           </form>
         </div>
       </div>
@@ -43,7 +43,7 @@
   <script src="js/login/EasePack.min.js"></script>
   <script src="js/login/rAF.js"></script>
   <script src="js/login/demo-1.js"></script>
-  <script src="js/login.js"></script>
+  <script src="js/login/login.js"></script>
   </body>
 </html>
 

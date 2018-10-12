@@ -1,21 +1,21 @@
-// window.addEventListener('load', function () {
-//     var app = new Vue({
-//         el: '#app',
-//         data: {
-//             message: 'Hello Vue!'
-//         }
-//     })
-// })
 var webSocket = null;
-function sendMes() {
-    webSocket.send('111111');
+
+//添加页面加载监听事件
+window.addEventListener('load', function () {
+    // var app = new Vue({
+    //     el: '#app',
+    //     data: {
+    //         message: 'Hello Vue!'
+    //     }
+    // })
+})
+
+function login() {
+    //get userinfo to json and send to server
+    //webSocket.send('111111');
+    window.self.location = "/main";
 }
-
-
 function initSocket(myWebsocket) {
-
-
-
     window.onbeforeunload = function () {
         //离开页面时的其他操作
     };
