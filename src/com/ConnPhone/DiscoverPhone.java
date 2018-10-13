@@ -2,11 +2,8 @@ package com.ConnPhone;
 
 import com.Tools.Tool_AdbCommand;
 import com.ConnDB.OperateMySQL;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.android.ddmlib.IDevice;
 
-import static com.Tools.Tool_MsgProcessor.messageParser;
 
 public class DiscoverPhone {
     public static String path = "d:\\1.jpeg";
@@ -14,7 +11,7 @@ public class DiscoverPhone {
 
     //主函数，提供逻辑顺序
     public static void main(String[] args) {
-/*
+
         //ADB初始化
         comm.initADB();
 
@@ -24,9 +21,12 @@ public class DiscoverPhone {
         //使用线程检测设备并截图
         //需要修改为各自独立线程，截图频率远大于检测
         runWatcher();
-*/
-        OperateMySQL sql = new OperateMySQL();
-        sql.getPassword("admin");
+
+        /*
+         * 数据库测试
+         * OperateMySQL sql = new OperateMySQL();
+         * sql.getPassword("admin");
+        */
     }
 
     /**

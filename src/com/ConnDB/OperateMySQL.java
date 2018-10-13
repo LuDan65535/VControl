@@ -2,9 +2,6 @@ package com.ConnDB;
 
 import com.Tools.Tool_MysqlCommand;
 
-import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.List;
 /**
  * 数据库结构：
  *  localhost:3306/VControl
@@ -26,6 +23,7 @@ public class OperateMySQL {
         sql.connectInfo(host,user,pwd);
         String result = sql.query("select password from useraccounts WHERE username=\""+ name + "\"","password");
         System.out.println("password = " + result);
+        sql.close();
         return result;
     }
 }
