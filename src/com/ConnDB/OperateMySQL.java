@@ -4,7 +4,7 @@ import com.Tools.Tool_MysqlCommand;
 
 /**
  * 数据库结构：
- *  localhost:3306/VControl
+ *  localhost:3306/VControl(远程连接使用：192.168.0.128:3306/VControl)
  *  地址：localhost
  *  端口：3306
  *  库名：VControl
