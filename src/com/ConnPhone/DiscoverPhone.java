@@ -23,8 +23,8 @@ public class DiscoverPhone {
         //runWatcher();
 
 
-         OperateMySQL sql = new OperateMySQL();
-         sql.getPassword("admin");
+         //OperateMySQL sql = new OperateMySQL();
+         //sql.getPassword("admin");
 
     }
 

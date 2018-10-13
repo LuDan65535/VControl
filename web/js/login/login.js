@@ -13,7 +13,21 @@ window.addEventListener('load', function () {
 function login() {
     //get userinfo to json and send to server
     //webSocket.send('111111');
-    window.self.location = "/main";
+    var userName = document.getElementById("userName");
+    var strUserName = userName.value;
+    var passwd = document.getElementById("passwd");
+    var strPasswd = passwd.value;
+    var loginJson =
+    {
+        type:"login",
+            content:{
+            userName:strUserName,
+            password:strPasswd
+        }
+    };
+    var loginJsonString=JSON.stringify(loginJson);
+    webSocket.send(loginJsonString);
+    //window.self.location = "/main";
 }
 function initSocket(myWebsocket) {
     window.onbeforeunload = function () {

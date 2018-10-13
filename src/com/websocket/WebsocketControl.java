@@ -46,8 +46,11 @@ public class WebsocketControl {
      */
     @OnMessage
     public String onMessage(@PathParam("myWebsocket") String myWebsocket, String message) {
+        System.out.println(message);
         JSONObject msg = JSON.parseObject(message);
+        System.out.println(msg);
         String result = messageParser(msg);
+        System.out.println(result);
         return result;
     }
 
