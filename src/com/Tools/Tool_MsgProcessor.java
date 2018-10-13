@@ -20,16 +20,23 @@ public class Tool_MsgProcessor {
         //login 信息使用
         if(msg.get("type").equals("login")){
             result.setType("login");
-            //密码正确
-            if( rcvContent.get("password").toString().equals(sql.getPassword(rcvContent.get("username").toString()))){
-                content.setResult("pass");
-                content.setCode("0");
-            }else if(sql.getPassword(rcvContent.get("username").toString()).equals("")){
-                //查询不到用户
+            //账户或密码为空
+            if(rcvContent.get("password").toString().equals("") || rcvContent.get("username").toString().equals("")){
                 content.setResult("fail");
                 content.setCode("2");
-            }else{
-                //密码错误
+            }
+            //密码正确
+            else if( rcvContent.get("password").toString().equals(sql.getPassword(rcvContent.get("username").toString()))){
+                content.setResult("pass");
+                content.setCode("0");
+            }
+            //查询不到用户
+            else if(sql.getPassword(rcvContent.get("username").toString()).equals("")){
+                content.setResult("fail");
+                content.setCode("2");
+            }
+            //密码错误
+            else{
                 content.setResult("fail");
                 content.setCode("1");
             }
