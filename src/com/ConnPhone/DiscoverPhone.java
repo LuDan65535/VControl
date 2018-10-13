@@ -10,21 +10,21 @@ public class DiscoverPhone {
     public static Tool_AdbCommand comm = new Tool_AdbCommand();
 
     //主函数，提供逻辑顺序
-    public static void main(String[] args) {
+    public static void startLoop() {
 
         //ADB初始化
-        //comm.initADB();
+        comm.initADB();
 
         //首次检测设备并截图
-        //comm.sendScreenShot(comm.ConnDevice(), path);
+        comm.sendScreenShot(comm.ConnDevice(), path);
 
         //使用线程检测设备并截图
         //需要修改为各自独立线程，截图频率远大于检测
-        //runWatcher();
+        runWatcher();
 
-
-         //OperateMySQL sql = new OperateMySQL();
-         //sql.getPassword("admin");
+        //数据库测试
+        //OperateMySQL sql = new OperateMySQL();
+        //sql.getPassword("admin");
 
     }
 

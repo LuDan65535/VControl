@@ -17,6 +17,7 @@ public class Tool_MsgProcessor {
         SendMsg result = new SendMsg();
         SendLoginCotent content = new SendLoginCotent();
 
+        //login 信息使用
         if(msg.get("type").equals("login")){
             result.setType("login");
             //密码正确
@@ -24,7 +25,7 @@ public class Tool_MsgProcessor {
                 content.setResult("pass");
                 content.setCode("0");
             }else if(sql.getPassword(rcvContent.get("username").toString()).equals("")){
-                //查询步到用户
+                //查询不到用户
                 content.setResult("fail");
                 content.setCode("2");
             }else{
