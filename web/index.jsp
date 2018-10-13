@@ -42,6 +42,7 @@
   <script src="js/login/EasePack.min.js"></script>
   <script src="js/login/rAF.js"></script>
   <script src="js/login/demo-1.js"></script>
+  <script src="js/websocket/websocket.js"></script>
   <script src="js/login/login.js"></script>
   </body>
 </html>

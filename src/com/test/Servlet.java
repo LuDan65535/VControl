@@ -11,15 +11,16 @@ public class Servlet extends HttpServlet {
             throws ServletException,IOException
 
     {
-        response.setContentType("text/html; charset=gb2312");
-        response.sendRedirect("/mainView.jsp");
+        doGet(request,response);
+        //response.setContentType("text/html; charset=gb2312");
 
     }
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-
+        response.sendRedirect("mainView.jsp");
+        return;
     }
 
     public void destroy()

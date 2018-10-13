@@ -14,8 +14,7 @@
 </head>
 <body>
 <header>
-    11111111
-    <div class="row">
+    <div class="row" style="left: 0px;top: 0px;">
         <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #000000;margin-left: 30px;" >
         </div>
         <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #005CBF;margin-left: 6px;" >
@@ -57,5 +56,7 @@
     </article>
 </section>
 <footer>Copy right</footer>
+<script src="js/mainView.js" type="application/javascript"></script>
+<script src="js/lib/vue.js" type="application/javascript"></script>
 </body>
 </html>
