@@ -11,8 +11,7 @@ window.addEventListener('load', function () {
 })
 
 function login() {
-    //get userinfo to json and send to server
-    //webSocket.send('111111');
+
     var userName = document.getElementById("userName");
     var strUserName = userName.value;
     var passwd = document.getElementById("passwd");
@@ -27,7 +26,7 @@ function login() {
     };
     var loginJsonString=JSON.stringify(loginJson);
     webSocket.send(loginJsonString);
-    //window.self.location = "/main";
+    // window.self.location = "/main";
 }
 function initSocket(myWebsocket) {
     window.onbeforeunload = function () {
@@ -39,16 +38,24 @@ function initSocket(myWebsocket) {
         return false;
     }
 
-    var target = 'ws://' + window.location.host + "/websocket/"+myWebsocket;
+    var target = 'ws://' + window.location.host + "/webSocketByTomcat/"+myWebsocket;
 
-    if ('WebSocket' in window) {
+    if('WebSocket' in window) {
         webSocket = new WebSocket(target);
-    } else if ('MozWebSocket' in window) {
+    } else if('MozWebSocket' in window) {
         webSocket = new MozWebSocket(target);
     } else {
-        alert('WebSocket is not supported by this browser.');
-        return;
+        webSocket = new SockJS(target);
     }
+
+    // if ('WebSocket' in window) {
+    //     webSocket = new WebSocket(target);
+    // } else if ('MozWebSocket' in window) {
+    //     webSocket = new MozWebSocket(target);
+    // } else {
+    //     alert('WebSocket is not supported by this browser.');
+    //     return;
+    // }
 
 
     // 收到服务端消息

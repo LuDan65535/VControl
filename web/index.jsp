@@ -9,10 +9,9 @@
 <%--<% String path = request.getContextPath(); %>--%>
 <html>
   <head>
-    <%--<script type="application/javascript" src="lib/vue.js"></script>--%>
-    <%--<script type="application/javascript" src="js/login.js"></script>--%>
     <link rel="stylesheet" type="text/css" href="css/login/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/login/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
     <!--必要样式-->
     <link rel="stylesheet" type="text/css" href="css/login/component.css" />
     <title></title>
@@ -33,7 +32,7 @@
               <span class="us_uer"></span>
               <input id="passwd" name="passwd" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
             </div>
-            <div class="mb2"><a class="act-but submit" onclick="login();" style="color: #FFFFFF">登录</a></div>
+            <div class="mb2 hand"><a class="act-but submit" onclick="login();" style="color: #FFFFFF">登录</a></div>
           </form>
         </div>
       </div>
