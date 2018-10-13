@@ -10,6 +10,7 @@ import javax.websocket.server.ServerEndpoint;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.utils.RcvMsg;
 
 import static com.Tools.Tool_MsgProcessor.messageParser;
 /**
@@ -54,10 +55,11 @@ public class WebSocket {
             sendMessageAll(jsonTo.getString("msg"));
         }
          **/
-        System.out.println(message);
+        //System.out.println(message);
         JSONObject msg = JSON.parseObject(message);
-        System.out.println(msg);
-        String result = messageParser(msg);
+        JSONObject content = JSON.parseObject(msg.get("content").toString());
+        //System.out.println(msg);System.out.println(content.get("username"));System.out.println(content.get("password"));
+        String result = messageParser(msg,content);
         System.out.println(result);
         return result;
     }

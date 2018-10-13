@@ -12,18 +12,18 @@ public class Tool_MsgProcessor {
     private static OperateMySQL sql = new OperateMySQL();
 
     //消息解读器，根据不同的消息进行处理
-    public static String messageParser(JSONObject msg){
+    public static String messageParser(JSONObject msg,JSONObject rcvContent){
 
         SendMsg result = new SendMsg();
         SendLoginCotent content = new SendLoginCotent();
 
-        if(msg.get("type") == "login"){
+        if(msg.get("type").equals("login")){
             result.setType("login");
             //密码正确
-            if( msg.get("password").toString().equals(sql.getPassword(msg.get("username").toString()))){
+            if( rcvContent.get("password").toString().equals(sql.getPassword(rcvContent.get("username").toString()))){
                 content.setResult("pass");
                 content.setCode("0");
-            }else if(sql.getPassword(msg.get("username").toString()).equals("")){
+            }else if(sql.getPassword(rcvContent.get("username").toString()).equals("")){
                 //查询步到用户
                 content.setResult("fail");
                 content.setCode("2");
