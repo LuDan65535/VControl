@@ -38,6 +38,7 @@
       </div>
     </div>
   </div><!-- /container -->
+  <script src="js/lib/jquery3.3.1/jquery3.3.1.min.js" type="application/javascript"></script>
   <script src="js/login/TweenLite.min.js"></script>
   <script src="js/login/EasePack.min.js"></script>
   <script src="js/login/rAF.js"></script>

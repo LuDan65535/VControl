@@ -23,7 +23,24 @@ function initSocket(myWebsocket) {
         var jsonMessage = eval('(' + msg.data + ')');
         if(jsonMessage.type == "login"){
             if(jsonMessage.content.code == "0"){
-                window.self.location = "/main";
+
+               // window.self.location = "/main";window.location.host
+                $.ajax({
+                    type:'get',
+                    url:'http://' + window.location.host + '/Servlet?type=getDevice',
+                    data:{},
+                    cache:false,
+                    //dataType:'json',
+                    success:function(data){
+                        console.log(data);
+                    },
+                    error:function(err){
+                        console.log(err);
+                    }
+                });
+
+
+
             }else if (jsonMessage.content.code == "1"){
                 //提示密码错误
             } else if (jsonMessage.content.code == "2"){

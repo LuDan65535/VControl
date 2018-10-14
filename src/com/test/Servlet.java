@@ -13,9 +13,17 @@ public class Servlet extends HttpServlet {
             throws ServletException,IOException
 
     {
-        doGet(request,response);
-        //response.setContentType("text/html; charset=gb2312");
 
+//        doGet(request,response);
+//        response.setContentType("text/html; charset=gb2312");
+        String param =request.getParameter("type");
+        if (param.equals("getDevices")){
+            DiscoverPhone DF = new DiscoverPhone();
+            DF.findDevices();
+        }else{
+            response.sendRedirect("mainView.jsp");
+        }
+        return;
     }
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)

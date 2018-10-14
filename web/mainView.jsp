@@ -56,6 +56,7 @@
     </article>
 </section>
 <footer>Copy right</footer>
+<script src="js/lib/jquery3.3.1/jquery3.3.1.min.js" type="application/javascript"></script>
 <script src="js/mainView.js" type="application/javascript"></script>
 <script src="js/lib/vue.js" type="application/javascript"></script>
 </body>
