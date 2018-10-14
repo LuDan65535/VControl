@@ -73,7 +73,7 @@ public class WebSocket {
         // session.getBasicRemote().sendText(message);
         //session.getAsyncRemote().sendText(message);
         for (WebSocket item : clients.values()) {
-            if (item.username.equals(To) )
+            //if (item.username.equals(To) )
                 item.session.getAsyncRemote().sendText(message);
         }
     }

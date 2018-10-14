@@ -3,6 +3,7 @@ package com.ConnPhone;
 import com.Tools.Tool_AdbCommand;
 import com.ConnDB.OperateMySQL;
 import com.android.ddmlib.IDevice;
+import com.websocket.WebSocket;
 
 
 public class DiscoverPhone {
@@ -80,6 +81,7 @@ public class DiscoverPhone {
         //发送设备信息，通过websocket
         public void sendDevices(IDevice[] devices){
             System.out.println(devices);
+            
         }
     }
 

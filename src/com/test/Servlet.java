@@ -13,15 +13,15 @@ public class Servlet extends HttpServlet {
             throws ServletException,IOException
 
     {
-
-//        doGet(request,response);
-//        response.setContentType("text/html; charset=gb2312");
         String param =request.getParameter("type");
+        System.out.println(request.getRequestURI());
+        if(request.getRequestURI().equals("/main")){
+            response.sendRedirect("mainView.jsp");
+            return;
+        }
         if (param.equals("getDevices")){
             DiscoverPhone DF = new DiscoverPhone();
             DF.findDevices();
-        }else{
-            response.sendRedirect("mainView.jsp");
         }
         return;
     }
@@ -29,13 +29,7 @@ public class Servlet extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-        String param =request.getParameter("type");
-        if (param.equals("getDevices")){
-            DiscoverPhone DF = new DiscoverPhone();
-            DF.findDevices();
-        }else{
-            response.sendRedirect("mainView.jsp");
-        }
+        doPost(request,response);
         return;
     }
 
