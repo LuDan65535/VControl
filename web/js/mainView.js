@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
     // var strJson = JSON.stringify(json);
     // webSocket.send("strJson");
 
-    $.ajax({
+    var msg = $.ajax({
         type:'post',
         url:'http://' + window.location.host + '/Servlet?type=getDevices',
         data:{},
@@ -23,8 +23,8 @@ window.addEventListener('load', function () {
         error:function(err){
             console.log(err);
         }
-    });
-
+    }).responseText;
+    console.log(msg);
 })
 function receivePic(data) {
     // var app = new Vue({

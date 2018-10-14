@@ -81,7 +81,7 @@ public class DiscoverPhone {
         //发送设备信息，通过websocket
         public void sendDevices(IDevice[] devices){
             System.out.println(devices);
-            
+
         }
     }
 
