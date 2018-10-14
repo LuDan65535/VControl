@@ -1,5 +1,7 @@
 package com.test;
 
+import com.ConnPhone.DiscoverPhone;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -19,7 +21,13 @@ public class Servlet extends HttpServlet {
                       HttpServletResponse response)
             throws ServletException, IOException
     {
-        response.sendRedirect("mainView.jsp");
+        String param =request.getParameter("type");
+        if (param.equals("getDevices")){
+            DiscoverPhone DF = new DiscoverPhone();
+            DF.findDevices();
+        }else{
+            response.sendRedirect("mainView.jsp");
+        }
         return;
     }
 
