@@ -15,7 +15,8 @@ public class DiscoverPhone {
     //初始化设备实时截图类
     public static DevicesCapture dc = new DevicesCapture();
 
-    public  static IDevice[] devices;
+    //检测设备列表
+    public static IDevice[] devices;
 
     //主函数，提供逻辑顺序
     public static void findDevices() {
@@ -39,36 +40,37 @@ public class DiscoverPhone {
 
     //设备实时检测函数的调用入口函数
     public static void runWatcher(){
-        dw.run();
+        //dw.run();
+        dw.start();
     }
 
     //设备实时截图函数的调用入口函数
     public static void runCapture(){
         dc.run();
+        //dc.start();
     }
 
     //websocket 收到截图请求，根据其中的截图设备列表，更新截图程序中的列表
     public static void  syncDevices(IDevice[] devices){
-        dc.devices = devices;
+        dc.mdevices = devices;
     }
 
     /**
      * 使用主线程进行实时设备检测，5s一次
      */
-    private static class DevicesWatcher implements Runnable {
+    private static class DevicesWatcher extends Thread implements Runnable {
         public static IDevice[] mOldDevices;
         DiscoverPhone dp = new DiscoverPhone();
 
         @Override
-        public void run() {
+        public void run(){
             while (!Thread.interrupted()) {
                 final IDevice[] newDevices = Tool_AdbCommand.ConnDevice();
                 //截图
                 //Tool_AdbCommand.sendScreenShot(newDevices, path);
                 if (newDevices != mOldDevices) {
                     mOldDevices = newDevices;
-                    dp.devices = mOldDevices;
-                    sendDevices(dp.devices);
+                    sendDevices(mOldDevices);
                 }
                 try {
                     Thread.sleep(5000);
@@ -77,27 +79,28 @@ public class DiscoverPhone {
                 }
             }
         }
-
-        //发送设备信息，通过websocket
+        //更新检测到的设备列表
         public void sendDevices(IDevice[] devices){
-            System.out.println(devices);
+            dp.devices = devices;
+            System.out.println(dp.devices);
 
         }
     }
 
+
     /**
      * 使用主线程进行实时设备截图，1s一次
      */
-    private static class DevicesCapture implements Runnable {
-        public static IDevice[] devices;
+    private static class DevicesCapture extends Thread implements Runnable {
+        public static IDevice[] mdevices;
 
         @Override
         public void run() {
             while (!Thread.interrupted()) {
-                final IDevice[] newDevices = devices;
-                System.out.println(newDevices);
+                final IDevice[] newDevices = mdevices;
+                //System.out.println(newDevices);
                 //截图并发送
-                Tool_AdbCommand.sendScreenShot(newDevices,path);
+                Tool_AdbCommand.sendScreenShot(newDevices,DiscoverPhone.path);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

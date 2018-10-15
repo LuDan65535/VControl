@@ -18,12 +18,7 @@ public class Servlet extends HttpServlet {
         if (param.equals("getDevices")){
             DiscoverPhone DF = new DiscoverPhone();
             DF.findDevices();
-            response.setCharacterEncoding("UTF-8");
-            response.getWriter().write("pass");
-            response.flushBuffer();
-            response.getWriter().flush();
-            response.getWriter().close();
-            System.out.println(response);
+            outputOneByOutputStream(response);
         }
         return;
     }
@@ -31,6 +26,14 @@ public class Servlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
         return;
+    }
+
+    public void outputOneByOutputStream(HttpServletResponse response) throws IOException{
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+        out.write("pass");
+        out.flush();
+        out.close();
     }
 
     public void destroy() {
