@@ -66,8 +66,6 @@ public class DiscoverPhone {
         public void run(){
             while (!Thread.interrupted()) {
                 final IDevice[] newDevices = Tool_AdbCommand.ConnDevice();
-                //截图
-                //Tool_AdbCommand.sendScreenShot(newDevices, path);
                 if (newDevices != mOldDevices) {
                     mOldDevices = newDevices;
                     sendDevices(mOldDevices);

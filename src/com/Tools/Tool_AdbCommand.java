@@ -2,9 +2,9 @@ package com.Tools;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 
 import com.android.ddmlib.AdbCommandRejectedException;
@@ -24,10 +24,11 @@ public class Tool_AdbCommand {
                 Thread.sleep(100); // 如果没有获得设备列表，则等待
                 System.err.println("wait for devices");
                 count++;
-            } catch (InterruptedException e) {}
+            } catch (InterruptedException e) {
+            }
             if (count > 300) {    // 设定时间超过300×100 ms的时候为连接超时
-                   System.err.print("Time out");
-                   break;
+                System.err.print("Time out");
+                break;
             }
         }
     }
@@ -35,7 +36,7 @@ public class Tool_AdbCommand {
     /*
     启动adb
      */
-    public static void initADB(){
+    public static void initADB() {
         AndroidDebugBridge.init(false);
     }
 
@@ -61,10 +62,9 @@ public class Tool_AdbCommand {
         System.out.println("device number = " + devices.length);
 
         int cnt = 1;
-        for (IDevice device : devices)
-        {
-            System.out.println("Device " + cnt + " Name: "  +  device.getName());
-            System.out.println("Device " + cnt + " isOnline: " + device.isOnline() );
+        for (IDevice device : devices) {
+            System.out.println("Device " + cnt + " Name: " + device.getName());
+            System.out.println("Device " + cnt + " isOnline: " + device.isOnline());
             System.out.println("Device " + cnt + " SerialNumber: : " + device.getSerialNumber());
             cnt++;
         }
@@ -72,10 +72,10 @@ public class Tool_AdbCommand {
     }
 
     /*
-    传输设备截图至电脑
+    获取设备截图，并转化为code64编码的string
      */
-    public static void sendScreenShot(IDevice[] devices, String filepath){
-        for(IDevice device: devices) {
+    public static String sendScreenShot(IDevice[] devices, String filepath) {
+        for (IDevice device : devices) {
             try {
                 RawImage rawScreen = device.getScreenshot();
 
@@ -104,7 +104,12 @@ public class Tool_AdbCommand {
                         }
                     }
                     try {
-                        ImageIO.write((RenderedImage) image, "JPEG", new File(filepath));
+                        //将图片转换成二进制,再转换为string
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        ImageIO.write((RenderedImage) image, "JPEG", baos);
+                        byte[] bytes = baos.toByteArray();
+                        return org.apache.commons.codec.binary.Base64.encodeBase64(bytes).toString();
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -118,9 +123,10 @@ public class Tool_AdbCommand {
                 e.printStackTrace();
             }
         }
+        return null;
     }
-}
 
+}
 
 
 
