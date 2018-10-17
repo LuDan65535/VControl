@@ -74,7 +74,7 @@ public class Tool_AdbCommand {
     /*
     获取设备截图，并转化为code64编码的string
      */
-    public static String sendScreenShot(IDevice[] devices, String filepath) {
+    public static String sendScreenShot(IDevice[] devices) {
         for (IDevice device : devices) {
             try {
                 RawImage rawScreen = device.getScreenshot();

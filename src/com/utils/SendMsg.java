@@ -2,7 +2,7 @@ package com.utils;
 
 public class SendMsg {
     private String type;
-    private SendLoginCotent content;
+    private SendContent content;
 
     public String getType() {
         return type;
@@ -12,11 +12,10 @@ public class SendMsg {
         this.type = type;
     }
 
-    public SendLoginCotent getContent() {
+    public SendContent getContent() {
         return content;
     }
-
-    public void setContent(SendLoginCotent content) {
+    public void setContent(SendContent content) {
         this.content = content;
     }
 }

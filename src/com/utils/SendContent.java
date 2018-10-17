@@ -1,8 +1,9 @@
 package com.utils;
 
-public class SendLoginCotent {
+public class SendContent {
     private String result;
     private String code;
+    private DeviceContent dContent;
 
     public String getResult() {
         return result;
@@ -18,5 +19,12 @@ public class SendLoginCotent {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public DeviceContent getDContent() {
+        return dContent;
+    }
+    public void setDContent(DeviceContent content) {
+        this.dContent = content;
     }
 }

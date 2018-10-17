@@ -1,11 +1,11 @@
 package com.Tools;
 
-import com.alibaba.fastjson.JSON;
+import com.ConnPhone.DiscoverPhone;
 import com.alibaba.fastjson.JSONObject;
 import com.ConnDB.OperateMySQL;
 import com.utils.SendMsg;
-import com.utils.SendLoginCotent;
-import com.utils.RcvLoginContent;
+import com.utils.SendContent;
+import com.utils.DeviceContent;
 
 public class Tool_MsgProcessor {
 
@@ -15,7 +15,8 @@ public class Tool_MsgProcessor {
     public static String messageParser(JSONObject msg,JSONObject rcvContent){
 
         SendMsg result = new SendMsg();
-        SendLoginCotent content = new SendLoginCotent();
+        SendContent content = new SendContent();
+        DeviceContent dContent = new DeviceContent();
 
         //login 信息使用
         if(msg.get("type").equals("login")){
@@ -39,6 +40,16 @@ public class Tool_MsgProcessor {
             else{
                 content.setResult("fail");
                 content.setCode("1");
+            }
+            //result.setContent(content);
+        }
+        if(msg.get("type").equals("ConnectDevices")){
+            result.setType("ConnectDevices");
+            if(rcvContent.get("message").toString().equals("ConnectDevices")){
+                dContent.setNum(DiscoverPhone.devices.length);
+                dContent.setContent(DiscoverPhone.devices);
+                content.setDContent(dContent);
+                content.setCode("3");
             }
         }
         result.setContent(content);

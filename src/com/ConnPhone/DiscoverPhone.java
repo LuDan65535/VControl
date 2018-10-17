@@ -7,7 +7,6 @@ import com.websocket.WebSocket;
 
 
 public class DiscoverPhone {
-    public static String path = "d:\\1.jpeg";
     //初始化ADB命令类
     public static Tool_AdbCommand comm = new Tool_AdbCommand();
     //初始化设备实时检测类
@@ -98,7 +97,7 @@ public class DiscoverPhone {
                 final IDevice[] newDevices = mdevices;
                 //System.out.println(newDevices);
                 //截图并发送
-                Tool_AdbCommand.sendScreenShot(newDevices,DiscoverPhone.path);
+                Tool_AdbCommand.sendScreenShot(newDevices);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
