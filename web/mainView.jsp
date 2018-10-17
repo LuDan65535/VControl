@@ -15,30 +15,27 @@
 <body>
 <header>
     <div class="row" style="left: 0px;top: 0px;">
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #000000;margin-left: 30px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 30px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #005CBF;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #007BFF;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #495057;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #C82333;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #E4606D;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #BEE5EB;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #F1B0B7;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #FFC107;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
-        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: #34495E;margin-left: 6px;" >
+        <div class="col-xs-1 hand" style="width: 80px;height: 80px;background-color: white;margin-left: 6px;" >
         </div>
     </div>
-
-
-
 </header>
 <section class="flexModal fixedLeft">
     <nav>
@@ -59,5 +56,6 @@
 <script src="js/lib/jquery3.3.1/jquery3.3.1.min.js" type="application/javascript"></script>
 <script src="js/mainView.js" type="application/javascript"></script>
 <script src="js/lib/vue.js" type="application/javascript"></script>
+<script src="js/websocket/websocket.js" type="application/javascript"></script>
 </body>
 </html>

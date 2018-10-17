@@ -16,7 +16,7 @@ header{
 	font-weight: bold;
 	text-align: center;
 	line-height: 60px;
-	background: #77d677;
+	background: black;
 }
 footer{
 	position: fixed;
@@ -28,7 +28,7 @@ footer{
 	font-weight: bold;
 	text-align: center;
 	line-height: 60px;
-	background: #77d677;
+	background: black;
 	bottom: 0;
 }
 section{

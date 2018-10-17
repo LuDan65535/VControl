@@ -46,6 +46,7 @@ public class Tool_MsgProcessor {
         if(msg.get("type").equals("ConnectDevices")){
             result.setType("ConnectDevices");
             if(rcvContent.get("message").toString().equals("ConnectDevices")){
+                System.out.println(DiscoverPhone.devices.length);
                 dContent.setNum(DiscoverPhone.devices.length);
                 dContent.setContent(DiscoverPhone.devices);
                 content.setDContent(dContent);

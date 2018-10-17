@@ -56,6 +56,7 @@ public class WebSocket {
         }
          **/
         //System.out.println(message);
+        System.out.println(message);
         JSONObject msg = JSON.parseObject(message);
         JSONObject content = JSON.parseObject(msg.get("content").toString());
         //System.out.println(msg);System.out.println(content.get("username"));System.out.println(content.get("password"));
