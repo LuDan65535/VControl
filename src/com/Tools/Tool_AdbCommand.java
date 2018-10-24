@@ -12,8 +12,11 @@ import com.android.ddmlib.AndroidDebugBridge;
 import com.android.ddmlib.IDevice;
 import com.android.ddmlib.RawImage;
 import com.android.ddmlib.TimeoutException;
+import com.utils.DeviceInfo;
 
 public class Tool_AdbCommand {
+
+    public static DeviceInfo deviceInfo[];
     /*
     等待设备连接电脑
      */
@@ -58,19 +61,27 @@ public class Tool_AdbCommand {
         waitDeviceList(bridge);
 
         IDevice devices[] = bridge.getDevices();
-
-        System.out.println("device number = " + devices.length);
-
-        int cnt = 1;
-        for (IDevice device : devices) {
-            System.out.println("Device " + cnt + " Name: " + device.getName());
-            System.out.println("Device " + cnt + " isOnline: " + device.isOnline());
-            System.out.println("Device " + cnt + " SerialNumber: : " + device.getSerialNumber());
-            cnt++;
-        }
+        deviceInfo = setDeviceInfo(devices);
         return devices;
     }
 
+    public static DeviceInfo[] setDeviceInfo(IDevice[] devices){
+
+        System.out.println("device number = " + devices.length);
+        DeviceInfo di[] = new DeviceInfo[devices.length];
+
+        int cnt = 0;
+        for (IDevice device : devices) {
+            System.out.println("Device " + (cnt+1) + " Name: " + device.getName());
+            System.out.println("Device " + (cnt+1) + " isOnline: " + device.isOnline());
+            System.out.println("Device " + (cnt+1) + " SerialNumber: : " + device.getSerialNumber());
+            di[cnt].setName(device.getName());
+            di[cnt].setSrialNumber(device.getSerialNumber());
+            di[cnt].setStatus(device.isOnline());
+            cnt++;
+        }
+        return di;
+    }
     /*
     获取设备截图，并转化为code64编码的string
      */

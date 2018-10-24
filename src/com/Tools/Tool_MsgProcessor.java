@@ -46,14 +46,17 @@ public class Tool_MsgProcessor {
         if(msg.get("type").equals("ConnectDevices")){
             result.setType("ConnectDevices");
             if(rcvContent.get("message").toString().equals("ConnectDevices")){
-                System.out.println(DiscoverPhone.devices.length);
-                dContent.setNum(DiscoverPhone.devices.length);
-                dContent.setContent(DiscoverPhone.devices);
+                System.out.println(Tool_AdbCommand.deviceInfo.length);
+                dContent.setNum(Tool_AdbCommand.deviceInfo.length);
+                dContent.setContent(Tool_AdbCommand.deviceInfo);
                 content.setDContent(dContent);
                 content.setCode("3");
             }
         }
+        System.out.println(dContent);
+        System.out.println(content);
         result.setContent(content);
+        System.out.println(result);
         return JSONObject.toJSONString(result);
     }
 }
