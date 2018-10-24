@@ -13,7 +13,7 @@ import com.Tools.Tool_MysqlCommand;
  */
 public class OperateMySQL {
 
-    private static String host = "jdbc:mysql://192.168.0.128:3306/VControl?useSSL=false&&serverTimezone=GMT%2B8&&allowPublicKeyRetrieval=true";
+    private static String host = "jdbc:mysql://172.16.0.11:3306/VControl?useSSL=false&&serverTimezone=GMT%2B8&&allowPublicKeyRetrieval=true";
     private static String user = "root";
     private static String pwd = "123123";
 
